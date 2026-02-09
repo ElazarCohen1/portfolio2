@@ -1,0 +1,157 @@
+.home_page {
+  /* display: flex; */
+  height: 100vh;
+  width: 100%;
+  font-family: 'Poppins', sans-serif;
+  background-color: #121212;
+  color: white;
+  overflow: hidden;
+}
+
+#profil {
+  flex: 5;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+#profil img {
+  width: 40%;
+  height: 60%;
+  object-fit: cover;
+  filter: brightness(0.6);
+  transition: transform 0.8s ease, filter 0.8s ease;
+  will-change: transform, filter;
+}
+
+#profil img:hover {
+  transform: scale(1.05);
+  filter: brightness(0.8);
+}
+
+.my_portfolio {
+  flex: 5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* padding: 40px 30px; */
+  /* color: #e68900; */
+  /* background: linear-gradient(135deg, #1f1f1f, #2b2b2b); */
+  text-align: center;
+  position: relative;
+  z-index: 10;
+}
+
+/* Agrandissement et style amélioré du logo en arrière-plan */
+.title_text {
+  position: relative;
+  font-size: 3.5rem;
+  font-weight: 500;
+  color: #f1f1f1;
+  letter-spacing: 5px;
+  margin-bottom: 1rem;
+  z-index: 20;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.8);
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  animation: popUp 1s ease-out forwards;
+}
+
+@keyframes popUp {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Logo en fond derrière le texte */
+.title_text::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.5);
+  z-index: -1;
+}
+
+/* Bouton stylé avec effet glow */
+.my_portfolio a button {
+  background: #ff9800;
+  /* margin-top: 90px; */
+  border: none;
+  padding: 15px 40px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: white;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(255, 152, 0, 0.4);
+}
+
+.my_portfolio a button:hover {
+  background: #e68900;
+  transform: scale(1.07);
+  box-shadow: 0 0 12px 3px #ffae42;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .home_page {
+    flex-direction: column;
+  }
+  #profil, .my_portfolio {
+    flex: none;
+    width: 100%;
+    height: 50vh;
+  }
+
+  .title_text {
+    font-size: 3rem;
+  }
+
+  .my_portfolio a button {
+    padding: 12px 25px;
+    font-size: 1rem;
+  }
+
+  #profil img{
+    width: fit-content;
+    height: fit-content;
+    
+  }
+}
+
+@media (max-width: 480px) {
+
+  .my_portfolio{
+      flex: 5;
+      height: 10%;
+
+  }
+
+  .title_text {
+    font-size: 2.4rem;
+  }
+
+  .my_portfolio a button {
+    padding: 10px 20px;
+  }
+  
+  #profil img{
+    width: 100%;
+    height: fit-content;
+  }
+  
+}

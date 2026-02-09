@@ -1,0 +1,140 @@
+#portfolio {
+    width: 100%;
+    background-color: #171616;
+    margin: 1rem 0;
+    padding: 2rem 1rem;
+    box-sizing: border-box;
+    animation: popUp 1s ease-out forwards;
+
+}
+
+#portfolio p {
+    color: #f0f0f0;
+    line-height: 1.4;
+    animation: popUp 1s ease-out forwards;
+
+}
+
+
+#projects {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#grid_project {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 3rem;
+    align-items: stretch;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+#title_portfolio {
+    color: #dbeafe;
+    font-size: 2.5rem;
+    /* text-align: center; */
+    padding-left: 12px;
+    margin-bottom: 2rem;
+    border-left: 4px solid #00c8ff;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* Project card */
+#block_in_project {
+    background-color: #242222;
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid #3a3333;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    justify-content: center;
+}
+#block_in_project a,
+#block_in_project a p {
+  text-decoration: none;
+}
+
+#block_in_project:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.7);
+}
+
+#github_logo {
+    width: 30px;
+    margin-top: auto;
+    filter: brightness(0) invert(1);
+    transition: filter 0.3s ease;
+}
+
+#github_logo:hover {
+    filter: brightness(0.8) invert(0.7);
+}
+
+#image_presentation {
+    width: 100%;
+    max-width: 220px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+#project_name {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+#project_description {
+    font-size: 1rem;
+    font-style: italic;
+    color: #ccc;
+    margin-bottom: 1rem;
+    text-align: center;
+    min-height: 70px;
+}
+
+#project_langage {
+    font-size: 0.875rem;
+    color: #bbb;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #grid_project {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 2rem;
+    }
+
+    #block_in_project {
+        width: 100%;
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #title_portfolio {
+        font-size: 2rem;
+    }
+
+    #project_name {
+        font-size: 1.5rem;
+    }
+
+    #project_description {
+        font-size: 0.9rem;
+    }
+}
